@@ -1,0 +1,39 @@
+{
+  "name": "grunt-nunjucks",
+  "description": "Grunt task for precompiling nunjucks templates",
+  "version": "0.1.0",
+  "homepage": "https://github.com/jlongster/nunjucks-grunt",
+  "author": {
+    "name": "James Long",
+    "email": "longster@gmail.com"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/jlongster/nunjucks-grunt.git"
+  },
+  "bugs": {
+    "url": "https://github.com/jlongster/nunjucks-grunt/issues"
+  },
+  "licenses": [
+    {
+      "type": "MIT",
+      "url": "https://github.com/jlongster/nunjucks-grunt/blob/master/LICENSE-MIT"
+    }
+  ],
+  "main": "Gruntfile.js",
+  "engines": {
+    "node": ">= 0.8.0"
+  },
+  "devDependencies": {
+    "grunt": "~0.4.1",
+    "grunt-contrib-watch": "~0.5.3"
+    "nunjucks": "~0.1.10"
+  },
+  "peerDependencies": {
+    "grunt": ">=0.4.1",
+    "nunjucks": ">=0.1.10"
+  },
+  "keywords": [
+    "gruntplugin"
+  ]
+}

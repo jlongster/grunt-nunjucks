@@ -47,13 +47,6 @@ grunt.initConfig({
             src: 'views/*',
             dest: 'static/js/templates.js'
         }
-    },
-
-    watch: {
-        nunjucks: {
-            files: tmpls,
-            tasks: ['nunjucks']
-        }
     }
 });
 

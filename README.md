@@ -73,15 +73,13 @@ same configuration as production.
 
 #### options.env
 Type: `nunjucks.Environment`
-Default value: `null`
 
 The nunjucks `Environment` object to use at compile-time. You need
 this if you use extensions or asynchronous filters. See
 [Precompiling](http://jlongster.github.com/nunjucks/api.html#api1).
 
 #### options.asFunction
-Type: `Boolean`
-Default value: `false`
+Type: `Boolean` (default: `false`)
 
 Compile each template as a callable function. Use this if you want to
 compile each template file into a separate js file as a simple

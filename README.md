@@ -53,6 +53,10 @@ grunt.initConfig({
 grunt.loadNpmTasks('grunt-nunjucks');
 ```
 
+Grunt provides several ways to specify file sources and destinations.
+Read more about how to configure the files
+[here](http://gruntjs.com/configuring-tasks#files).
+
 This is really powerful when combing with
 [`grunt-contrib-watch`](https://github.com/gruntjs/grunt-contrib-watch).
 This will automatically precompile your templates every time one of

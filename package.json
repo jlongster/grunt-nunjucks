@@ -26,12 +26,12 @@
   },
   "devDependencies": {
     "grunt": "~0.4.1",
-    "grunt-contrib-watch": "~0.5.3"
-    "nunjucks": "~0.1.10"
+    "grunt-contrib-watch": "~0.5.3",
+    "nunjucks": "~1.0.0"
   },
   "peerDependencies": {
     "grunt": ">=0.4.1",
-    "nunjucks": ">=0.1.10"
+    "nunjucks": ">=1.0.0"
   },
   "keywords": [
     "gruntplugin"

@@ -88,3 +88,12 @@ Type: `Boolean` (default: `false`)
 Compile each template as a callable function. Use this if you want to
 compile each template file into a separate js file as a simple
 callable object.
+
+#### options.rename
+Type: `function(filepath) : string` (optional)
+
+If present, this function is called once per template file.  It is passed
+the filepath of the template and should return a name for the compiled
+template.
+
+If this option isn't present, the filepath will be the name of the template.

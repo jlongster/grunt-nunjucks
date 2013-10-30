@@ -27,7 +27,14 @@ module.exports = function(grunt) {
                     return true;
                 }
             }).map(function(filepath) {
-                return nunjucks.precompile(filepath, opts);
+                var precompileOpts = {
+                    asFunction: opts.asFunction,
+                    env: opts.env
+                };
+                if (opts.rename) {
+                    precompileOpts.name = opts.rename(filepath);
+                }
+                return nunjucks.precompile(filepath, precompileOpts);
             }).join('');
 
             grunt.file.write(f.dest, src);

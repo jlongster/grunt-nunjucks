@@ -44,6 +44,7 @@ A real example:
 grunt.initConfig({
     nunjucks: {
         precompile: {
+            baseDir: 'views/',
             src: 'views/*',
             dest: 'static/js/templates.js'
         }

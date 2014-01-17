@@ -1,10 +1,12 @@
 
 module.exports = function(grunt) {
-    var tmpls = 'tasks/views/*';
+    var baseDir = 'tasks/views/';
+    var tmpls = baseDir + '*';
 
     grunt.initConfig({
         nunjucks: {
             precompile: {
+                baseDir: baseDir,
                 src: tmpls,
                 dest: 'tasks/output/templates.js'
             }

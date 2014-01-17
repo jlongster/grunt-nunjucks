@@ -27,6 +27,16 @@ module.exports = function(grunt) {
                     return true;
                 }
             }).map(function(filepath) {
+                if (f.baseDir) {
+                    if (f.baseDir.substr(-1) !== '/') {
+                        // Append a trailing slash, if there isn't one.
+                        f.baseDir += '/';
+                    }
+                    if (filepath.substr(0, f.baseDir.length) === f.baseDir) {
+                        // Strip leading `baseDir` from filename.
+                        opts.name = filepath.substr(f.baseDir.length);
+                    }
+                }
                 return nunjucks.precompile(filepath, opts);
             }).join('');
 

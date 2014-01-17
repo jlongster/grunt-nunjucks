@@ -47,6 +47,12 @@ grunt.initConfig({
             baseDir: 'views/',
             src: 'views/*',
             dest: 'static/js/templates.js'
+            options: {
+                env: require('./nunjucks-environment'),
+                name: function(filename) {
+                    return 'foo/' + filename;
+                }
+            }
         }
     }
 });
@@ -76,6 +82,13 @@ same configuration as production.
 
 ### Options
 
+#### options.asFunction
+Type: `Boolean` (default: `false`)
+
+Compile each template as a callable function. Use this if you want to
+compile each template file into a separate js file as a simple
+callable object.
+
 #### options.env
 Type: `nunjucks.Environment`
 
@@ -83,9 +96,8 @@ The nunjucks `Environment` object to use at compile-time. You need
 this if you use extensions or asynchronous filters. See
 [Precompiling](http://jlongster.github.com/nunjucks/api.html#api1).
 
-#### options.asFunction
-Type: `Boolean` (default: `false`)
+#### options.name
+Type: `function(filepath: string)` (default: filepath)
 
-Compile each template as a callable function. Use this if you want to
-compile each template file into a separate js file as a simple
-callable object.
+Define a function to transform each template's filepath into a template name.
+These names are used with [`nunjucks.render`](http://jlongster.github.io/nunjucks/api.html#render).

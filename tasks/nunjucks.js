@@ -8,18 +8,23 @@
 
 'use strict';
 
-module.exports = function(grunt) {
+module.exports = function (grunt) {
     var nunjucks = require('nunjucks');
+    var lib = require('nunjucks/src/lib');
 
-    grunt.registerMultiTask('nunjucks', 'Precompile nunjucks', function() {
+    grunt.registerMultiTask('nunjucks', 'Precompile nunjucks', function () {
         // Merge task-specific and/or target-specific options with these defaults.
         var opts = this.options({
             asFunction: false,
             env: null
         });
 
-        var files = this.files.forEach(function(f) {
-            var src = f.src.filter(function(filepath) {
+        var nameFunc = lib.isFunction(opts.name) ? opts.name : function(filepath) {
+            return filepath;
+        };
+
+        this.files.forEach(function (f) {
+            var src = f.src.filter(function (filepath) {
                 if (!grunt.file.exists(filepath)) {
                     grunt.log.warn('Source file "' + filepath + '" not found.');
                     return false;
@@ -37,6 +42,7 @@ module.exports = function(grunt) {
                         opts.name = filepath.substr(f.baseDir.length);
                     }
                 }
+                opts.name = nameFunc(filepath);
                 return nunjucks.precompile(filepath, opts);
             }).join('');
 

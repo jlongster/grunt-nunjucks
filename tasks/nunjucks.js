@@ -19,9 +19,7 @@ module.exports = function (grunt) {
             env: null
         });
 
-        var nameFunc = lib.isFunction(opts.name) ? opts.name : function(filepath) {
-            return filepath;
-        };
+        var nameFunc = lib.isFunction(opts.name) ? opts.name(filepath) : opts.name;
 
         this.files.forEach(function (f) {
             var src = f.src.filter(function (filepath) {

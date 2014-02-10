@@ -96,6 +96,12 @@ The nunjucks `Environment` object to use at compile-time. You need
 this if you use extensions or asynchronous filters. See
 [Precompiling](http://jlongster.github.com/nunjucks/api.html#api1).
 
+Note that this `env` only exists so the precompiler can compile code
+correctly with your extensions or async filters. You still need to set
+up and configure an `env` on the client-side. It's recommended that
+you isolate your `env` configuration into it's own module so it can
+load it from multiple places.
+
 #### options.name
 Type: `function(filepath: string)` (default: filepath)
 

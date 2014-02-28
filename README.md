@@ -46,7 +46,7 @@ grunt.initConfig({
         precompile: {
             baseDir: 'views/',
             src: 'views/*',
-            dest: 'static/js/templates.js'
+            dest: 'static/js/templates.js',
             options: {
                 env: require('./nunjucks-environment'),
                 name: function(filename) {

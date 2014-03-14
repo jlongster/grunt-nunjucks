@@ -32,6 +32,7 @@ module.exports = function (grunt) {
                     return true;
                 }
             }).map(function(filepath) {
+                var filename = filepath;
                 if (f.baseDir) {
                     if (f.baseDir.substr(-1) !== '/') {
                         // Append a trailing slash, if there isn't one.
@@ -39,10 +40,10 @@ module.exports = function (grunt) {
                     }
                     if (filepath.substr(0, f.baseDir.length) === f.baseDir) {
                         // Strip leading `baseDir` from filename.
-                        opts.name = filepath.substr(f.baseDir.length);
+                        filename = filepath.substr(f.baseDir.length);
                     }
                 }
-                opts.name = nameFunc(filepath);
+                opts.name = nameFunc(filename);
                 return nunjucks.precompile(filepath, opts);
             }).join('');
 

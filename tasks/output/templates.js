@@ -1,4 +1,4 @@
-(function() {(window.nunjucksPrecompiled = window.nunjucksPrecompiled || {})["tasks/views/bar.html"] = (function() {function root(env, context, frame, runtime, cb) {
+(function() {(window.nunjucksPrecompiled = window.nunjucksPrecompiled || {})["bar.html"] = (function() {function root(env, context, frame, runtime, cb) {
 var lineno = null;
 var colno = null;
 var output = "";
@@ -17,7 +17,7 @@ root: root
 };
 })();
 })();
-(function() {(window.nunjucksPrecompiled = window.nunjucksPrecompiled || {})["tasks/views/foo.html"] = (function() {function root(env, context, frame, runtime, cb) {
+(function() {(window.nunjucksPrecompiled = window.nunjucksPrecompiled || {})["foo.html"] = (function() {function root(env, context, frame, runtime, cb) {
 var lineno = null;
 var colno = null;
 var output = "";
@@ -36,7 +36,7 @@ root: root
 };
 })();
 })();
-(function() {(window.nunjucksPrecompiled = window.nunjucksPrecompiled || {})["tasks/views/index.html"] = (function() {function root(env, context, frame, runtime, cb) {
+(function() {(window.nunjucksPrecompiled = window.nunjucksPrecompiled || {})["index.html"] = (function() {function root(env, context, frame, runtime, cb) {
 var lineno = null;
 var colno = null;
 var output = "";

@@ -80,6 +80,11 @@ same configuration as production.
     }
 ```
 
+Note: if you experience high CPU usage when running grunt tasks
+on OSX and you're using both `grunt-nunjucks` and `grunt-contrib-watch`
+check that the environment required in the task's `options.env` has `watch` set to
+false e.g: `nunjucks.configure({ autoescape: true, watch: false });`
+
 ### Options
 
 #### options.asFunction
